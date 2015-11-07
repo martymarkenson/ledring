@@ -37,16 +37,14 @@ void setup() {
 
 void loop()
 {
-
-  // send the 'leds' array out to the actual LED strip
-  FastLED.show();
-  
-  for(int i=0;i<77;i++){
-    leds[i] = CRGB::Green;
-    // insert a delay to keep the framerate modest
-    FastLED.delay(1000/FRAMES_PER_SECOND);
+  green();
   }
-  
+}
 
-
+void green() {  
+  for(int i=0;i<NUM_LEDS;i++){
+    leds[i] = CRGB::Green;
+    FastLED.show();
+    delay(30);
+  }
 }
