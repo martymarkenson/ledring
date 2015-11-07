@@ -90,17 +90,18 @@ void blue()
 void pinwheel()
 
 {
-  for ( int i = 0; i < NUM_LEDS/2; i++)
+  
+for ( int j = 0; j < NUM_LEDS; j++) {
 
- {
-  leds[i] = CRGB::HotPink;
-
-  }
-
- for ( int i = NUM_LEDS/2; i < NUM_LEDS; i++)
-
- {
-  leds[i] = CRGB::Blue;
-  }
-
+	for ( int i = 0; i < NUM_LEDS/2; i++)
+	{
+  	leds[i+j] = CRGB::HotPink;
+  	}
+	
+	for ( int i = NUM_LEDS/2; i < NUM_LEDS; i++)
+ 	{
+  	leds[i+j] = CRGB::Blue;
+  	}
+	FastLED.show();
+	
 }
